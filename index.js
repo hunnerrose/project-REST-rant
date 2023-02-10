@@ -5,6 +5,9 @@ require('dotenv').config()
 //Initialize app
 const app = express()
 
+//Import the router we created in places.js
+app.use('/places', require('./controllers/places'))
+
 
 app.get('/', (req,res) => {
     res.send('Hello world!')
