@@ -1,7 +1,22 @@
 const router = require('express').Router()
 
 router.get('/', (req, res) => {
-    res.send('GET /places')
+    //for now we'll use mock data
+    let places = [{
+        name: 'H-Thai-ML',
+        city: 'Seattle',
+        state: 'WA',
+        cuisines: 'Thai, Pan-Asian',
+        pic: 'http://placekitten.com/250/250'
+    }, {
+        name: 'Coding Cat Cafe',
+        city: 'Phoenix',
+        state: 'AZ',
+        cuisines: 'Coffee, Bakery',
+        pic: 'http://placekitten.com/250/250'
+    }]
+    //Pass the above place arary into the render method to allow us to use that array inside our view
+    res.render('places/index', { places })
 })
 
 module.exports = router
