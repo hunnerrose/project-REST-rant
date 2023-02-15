@@ -1,5 +1,9 @@
 const router = require('express').Router()
 
+router.get('/new', (req, res) => {
+    res.render('places/new')
+})
+
 router.get('/', (req, res) => {
     //for now we'll use mock data
         //how can I resize just these images?? v
