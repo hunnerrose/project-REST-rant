@@ -9,9 +9,16 @@ function index (data) {
     //We'll need to format the data in the places array into HTML so a web page can display it; we'll do this with the .map() array method
     let placesFormatted = data.places.map((place) => {
         return (
-            <div>
+            //Make a grid with Bootstrap
+            <div className="col-sm-6">
                 <h2>{place.name}</h2>
+                <p className="text-center">
+                    {place.cuisines}
+                </p>
                 <img src={place.pic} alt={place.name}></img>
+                <p className="text-center">
+                    Located in {place.city}, {place.state}
+                </p>
             </div>
         )
     })
@@ -19,8 +26,10 @@ function index (data) {
     return (
         <Def>
             <main>
-                <h1>PLACES INDEX PAGE</h1>
-                {placesFormatted}
+                <h1>Places to Rant or Rave About</h1>
+                <div className="row">
+                    {placesFormatted}
+                </div>
             </main>
         </Def>
     )
