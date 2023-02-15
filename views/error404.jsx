@@ -9,6 +9,11 @@ function error404 () {
         <Def>
             <main>
                 <h1>404: PAGE NOT FOUND!</h1>
+                <div>
+                    {/* Did I attribute this correctly? */}
+                    <img src="/images/woman-cat-yelling-meme.jpg" alt="Woman Yelling at Cat Meme" height="250" width="400" />
+                    Photo by <a href="https://www.oprahdaily.com/entertainment/a29739536/cat-meme-taylor-armstrong-explained/">Amanda Mitchell</a> on <a href="https://www.oprahdaily.com/">Oprah Daily</a>
+                </div>
                 <p>Oops, sorry, we can't find this page!</p>
             </main>
         </Def>

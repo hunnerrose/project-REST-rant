@@ -9,6 +9,10 @@ function home () {
         <Def>
             <main>
                 <h1>HOME</h1>
+                <div>
+                    <img src="/images/knife-burger.jpg" alt="Burger with Knife impaled" height="250" width="400" />
+                    Photo by <a href="https://unsplash.com/@1ncreased">Lidye</a> on <a href="https://unsplash.com/">Unsplash</a>
+                </div>
                 <a href="/places">
                     <button className="btn-primary">Places Page</button>
                 </a>
