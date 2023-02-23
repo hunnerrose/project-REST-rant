@@ -36,7 +36,7 @@ function show (data) {
               {/* DELETE BUTTON */}
               <form
                 method="POST"
-                action={`/places/${data.place.id}?_method=DELETE`}
+                action={`/places/${data.id}?_method=DELETE`}
               >
                 <button
                   type="submit"
