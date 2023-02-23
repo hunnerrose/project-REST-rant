@@ -7,7 +7,36 @@ router.get('/new', (req, res) => {
     res.render('places/new')
 })
 
-//SHOW??
+//EDIT
+router.get('/:id/edit', (req, res) => {
+    let id = Number(req.params.id)
+    if (isNaN(id)) {
+        res.render('error404')
+    }
+    else if (!places[id]) { 
+        res.render('error404')
+    } 
+    else {
+        res.render('places/edit', {place: places[id]})
+    }
+  })
+  
+
+//Rendering new show page we made?
+router.get('/:id', (req, res) => {
+    let id = Number(req.params.id)
+    if (isNaN(id)) {
+        res.render('error404')
+    } else if (!places[id]) {
+        res.render('error404')
+    }
+    else {
+    res.render('places/show', {place: places[id]})
+    }
+  })
+  
+
+// DISPLAY PLACES INDEX
 router.get('/', (req, res) => {
     //for now we'll use mock data
         //how can I resize just these images?? v
