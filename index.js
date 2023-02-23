@@ -1,6 +1,7 @@
 //Require needed modules
 const express = require('express')
 require('dotenv').config()
+const methodOverride = require('method-override')
 
 //Initialize app
 const app = express()
@@ -13,6 +14,7 @@ app.engine('jsx', require ('express-react-views').createEngine())
 app.use(express.static('public'))
 //when we send data with the POST verb, that data gets encrypted for its trip across the internet. Because it is protected this way while in transit, that makes it extra safe for usernames, passwords, and other sensitive data. However, it also means we will need an extra tool to decrypt that data for us.
 app.use(express.urlencoded({ extended: true }));
+app.use(methodOverride('_method'))
 
 //Import the router we created in places.js
 app.use('/places', require('./controllers/places'))
