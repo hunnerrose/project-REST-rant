@@ -24,6 +24,7 @@ function show (data) {
             </div>
             <div>
             {/* EDIT BUTTON */}
+              {/*My edit button isn't working; when I click it, I get an error "Cannot PUT /places/undefined" and I'm not sure why? */}
               <a
                 href={`/places/${data.id}/edit`}
                 className="btn btn-warning"
@@ -34,7 +35,6 @@ function show (data) {
 				    <br />
             <div>
               {/* DELETE BUTTON */}
-                {/*My delete button isn't working; when I click it, I get an error "Cannot PUT /places/undefined" and I'm not sure why? */}
               <form
                 method="POST"
                 action={`/places/${data.id}?_method=DELETE`}
