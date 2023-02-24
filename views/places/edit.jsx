@@ -63,7 +63,7 @@ function edit_form(data) {
                         required/>
                     </div>
                     {/* Create submit button */}
-                    <input className="btn btn-primary" type="submit" value="Add Place" />
+                    <input className="btn btn-primary" type="submit" value="Edit Restaurant" />
                 </form>
             </main>
         </Def>
