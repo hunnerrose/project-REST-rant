@@ -7,12 +7,12 @@ const Def = require('../default')
         //make a parameter in this below index function in order to accept the data we just passed in the places.js file (data)
 function index (data) {
     //We'll need to format the data in the places array into HTML so a web page can display it; we'll do this with the .map() array method
-    let placesFormatted = data.places.map((place, index) => {
+    let placesFormatted = data.places.map((place) => {
         return (
             //Make a grid with Bootstrap
             <div className="col-sm-6">
                 <h2>
-                    <a href={`/places/${index}`}>
+                    <a href={`/places/${place.id}`}>
                         {place.name} 
                     </a> 
                 </h2>
