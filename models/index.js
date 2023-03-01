@@ -1,5 +1,8 @@
 //This file is a one-stop shop for our connection info and access to all of our models.
 
+//require the dotenv package to ensure we can use the value of the MONGO_URI environment variable
+require('dotenv').config()
+
 //Connect to Mongoose
 const mongoose = require('mongoose')
 const MONGO_URI = process.env.MONGO_URI

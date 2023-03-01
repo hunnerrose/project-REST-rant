@@ -1,5 +1,5 @@
 //Purpose of a seeder file: to provide sample data in a database (for good app demonstration)
-const db = require('./models')
+const db = require('../models')
 
 //Use Mongoose's create() method to create a new place. (If we pass it an array, it will create multiple places at once)
 db.Place.create([{
@@ -18,7 +18,7 @@ db.Place.create([{
     founded: 2020
 }])
 .then( () => {
-    consolee.log('Success!')
+    console.log('Success!')
         //call the process.exit() method to let the file know when  the process can be closed so it doesn't just hang open like a web server
     process.exit()
 })
