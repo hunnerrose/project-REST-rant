@@ -12,29 +12,34 @@ function new_form() {
                 <form method="POST" action="/places">
                     {/* Create a div 'block element so each form field will live on a separate line' and in that div, create a label and an input. */}
                         {/* Let's update the label and input with specific information. The most important part to remember is the name attribute of the input tag. This is important because it will be the variable name we end up using on the back-end later. Less critical, but still important, is to make a for attribute on the label that corresponds to an id attribute on the input. That is for accessibility/screen readers! */}
-                    <div className="form-group">
+                    <div className="form-group col-sm-4 mx-auto">
                         <label htmlFor="name">Place Name</label>
                         <input className="form-control" type="text" id="name" name="name" required />
                     </div>
-                    <div className="form-group">
+                    <div className="form-group col-sm-4 mx-auto">
                         <label htmlFor="pic">Place Picture</label>
                         <input className="form-control" type="url" id="pic" name="pic" />
                     </div>
-                    <div className="form-group">
+                    <div className="form-group col-sm-4 mx-auto">
                         <label htmlFor="city">City</label>
                         <input className="form-control" type="text" id="city" name="city" />
                     </div>
-                    <div className="form-group">
+                    <div className="form-group col-sm-4 mx-auto">
                         <label htmlFor="state">State</label>
                         <input className="form-control" type="text" id="state" name="state" />
                     </div>
-                    <div className="form-group">
+                    <div className="form-group col-sm-4 mx-auto">
                         <label htmlFor="city">Cuisines</label>
                         <input className="form-control" type="text" id="cuisines" name="cuisines" required/>
                     </div>
-                    <div className="form-group">
+                    <div className="form-group col-sm-4 mx-auto">
                         <label htmlFor="founded">Founded Year</label>
-                        <input className="form-control" id="founded" name="founded" />
+                        <input 
+                            className="form-control" 
+                            id="founded" 
+                            name="founded"
+                            //add default value and suggest the year be a # (JS code in the value attribute will yield the current year)
+                            value={new Date().getFullYear()} />
                     </div>
 
                     {/* Create submit button */}
