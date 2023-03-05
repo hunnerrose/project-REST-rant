@@ -38,3 +38,29 @@ h1 {
     margin-left: 20px;
     background-color: white;
   }
+
+  nav {
+    background-color: 242582;
+    padding: 10px;
+  }
+  
+  nav ul {
+    list-style-type: none;
+    margin: 0;
+  }
+  
+  nav li {
+    display: inline;
+    margin-right: 25px;
+  }
+  
+  
+  nav a:hover {
+    color: 242582;
+    text-decoration: none;
+  }
+  
+  form {
+    display: inline;
+  }
+

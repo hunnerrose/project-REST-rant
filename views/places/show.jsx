@@ -5,14 +5,14 @@ const Def = require('../default')
 
 function show (data) {
     let comments = (
-      <h3 className="inactive">
+      <h6 className="inactive">
         No comments yet!
-      </h3>
+      </h6>
     )
     let rating = (
-      <h3 className="inactive">
+      <h6 className="inactive">
         Not yet rated
-      </h3>
+      </h6>
     )
     if (data.place.comments.length) {
       let sumRatings = data.place.comments.reduce((tot, c) => {
@@ -71,9 +71,9 @@ function show (data) {
                 {rating}
                 {/* <p>Currently Unrated</p> */}
                 <h2>Description</h2>
-                <h3>
+                <h6>
                   {data.place.showEstablished()}
-                </h3>
+                </h6>
                 <h4>
                   Serving {data.place.cuisines}
                 </h4>
