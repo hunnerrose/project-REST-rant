@@ -2,7 +2,7 @@ const router = require('express').Router()
 const places = require('../models/places.js')
 const db = require('../models')
 
-
+//Index
 router.get('/', (req, res) => {
     db.Place.find()
     .then((places) => {
@@ -15,6 +15,7 @@ router.get('/', (req, res) => {
 //   res.send('GET /places stub')
 })
 
+//Post
 router.post('/', (req, res) => {
     db.Place.create(req.body)
     .then(() => {
@@ -27,10 +28,12 @@ router.post('/', (req, res) => {
 //   res.send('POST /places stub')
 })
 
+//New
 router.get('/new', (req, res) => {
   res.render('places/new')
 })
 
+//Show
 router.get('/:id', (req, res) => {
     db.Place.findById(req.params.id)
     .populate('comments')
@@ -45,16 +48,39 @@ router.get('/:id', (req, res) => {
 //   res.send('GET /places/:id stub')
 })
 
+//Put
 router.put('/:id', (req, res) => {
-  res.send('PUT /places/:id stub')
+    db.Place.findByIdAndUpdate(req.params.id, req.body)
+    .then(() => {
+        res.redirect(`/places/${req.params.id}`);
+    })
+    .catch((err) => {
+        console.log('err', err);
+        res.render('error404');
+    });
 })
 
+//Delete
 router.delete('/:id', (req, res) => {
-  res.send('DELETE /places/:id stub')
+    db.Place.findByIdAndDelete(req.params.id)
+    .then(() => {
+        res.redirect('/places');
+    })
+    .catch((err) => {
+        console.log('err', err);
+        res.render('error404');
+    });
 })
 
+//Edit
 router.get('/:id/edit', (req, res) => {
-  res.send('GET edit form stub')
+    db.Place.findById(req.params.id)
+    .then((place) => {
+        res.render('places/edit', {place});
+    })
+    .catch((err) => {
+        res.render('error404');
+    });
 })
 
 router.post('/:id/rant', (req, res) => {
