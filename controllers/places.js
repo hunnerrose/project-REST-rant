@@ -17,6 +17,11 @@ router.get('/', (req, res) => {
 
 //Post
 router.post('/', (req, res) => {
+    if (!req.body.pic) {
+		// Default image if one is not provided
+		req.body.pic = 'https://via.placeholder.com/500';
+	}
+
     db.Place.create(req.body)
     .then(() => {
         res.redirect('/places')
