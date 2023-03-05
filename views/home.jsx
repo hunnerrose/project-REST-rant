@@ -10,7 +10,7 @@ function home () {
             <main>
                 <h1>HOME</h1>
                 <div>
-                    <img src="/images/knife-burger.jpg" alt="Burger with Knife impaled" height="250" width="400" />
+                    <img className="homeimg" src="/images/knife-burger.jpg" alt="Burger with Knife impaled"/>
                     Photo by <a href="https://unsplash.com/@1ncreased">Lidye</a> on <a href="https://unsplash.com/">Unsplash</a>
                 </div>
                 <a href="/places">

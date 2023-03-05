@@ -57,7 +57,7 @@ function show (data) {
           <main>
             <div className="row">
               <div className="col-sm-6">
-                <img
+                <img className="showImg"
                   src={data.place.pic}
                   alt={data.place.name}
                 />

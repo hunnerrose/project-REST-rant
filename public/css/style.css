@@ -1,6 +1,21 @@
+a {
+  color:rgba(0, 123, 139, 0.993);
+}
+
+.homeimg {
+  width: 600px;
+  height: 400px;
+}
+
+.showImg {
+  padding: 2px;
+  width: 600px;
+  height: 400px;
+}
+
 h1 {
     text-align: center;
-    color: cornflowerblue;
+    color: rgb(104, 43, 184);
   }
   
   img {
@@ -9,18 +24,24 @@ h1 {
   }
 
   nav {
-    background-color: cornflowerblue;
+    background-color: rgba(0, 123, 139, 0.993);
     padding: 10px;
   }
 
   nav ul {
+    color: aqua;
     list-style-type: none;
     margin: 0;
   }
 
   nav li {
+    color: aqua;
     display: inline;
     margin-right: 25px;
+  }
+
+  nav a {
+    color: aqua
   }
 
   nav a:hover {
@@ -29,38 +50,13 @@ h1 {
   }
 
   body {
-    background-color: lightblue;
+    background-color: rgb(144, 174, 179);
     text-align: center;
   }
 
   main {
     margin-right: 20px;
     margin-left: 20px;
-    background-color: white;
-  }
-
-  nav {
-    background-color: 242582;
-    padding: 10px;
-  }
-  
-  nav ul {
-    list-style-type: none;
-    margin: 0;
-  }
-  
-  nav li {
-    display: inline;
-    margin-right: 25px;
-  }
-  
-  
-  nav a:hover {
-    color: 242582;
-    text-decoration: none;
-  }
-  
-  form {
-    display: inline;
+    background-color: rgb(218, 191, 240);
   }
 
