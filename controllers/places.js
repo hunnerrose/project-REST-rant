@@ -19,7 +19,7 @@ router.get('/', (req, res) => {
 router.post('/', (req, res) => {
     if (!req.body.pic) {
 		// Default image if one is not provided
-		req.body.pic = 'https://via.placeholder.com/500';
+		req.body.pic = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSuedAkCOe5lVGgA35ilzbn-jVTXRwp4vTmZQ&usqp=CAU';
 	}
 
     db.Place.create(req.body)
