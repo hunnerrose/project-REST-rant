@@ -13,12 +13,22 @@ function show (data) {
       comments = data.place.comments.map(c => {
         return (
           <div className="border">
-            <h2 className="rant">{c.rant ? 'Rant! :(' : 'Rave! :)'}</h2>
+            <h2 className="rant">{c.rant ? 'Rant! 😒' : 'Rave! 😎'}</h2>
             <h4>{c.content}</h4>
             <h3>
               <strong>- {c.author}</strong>
             </h3>
             <h4>Rating: {c.stars}</h4>
+            <form
+              method="POST"
+              action={`/places/${data.place.id}/comment/${c.id}?_method=DELETE`}
+					  >
+						<input
+							type="submit"
+							className="btn btn-danger"
+							value="Delete Comment"
+						/>
+					</form>
           </div>
         )
       })
@@ -77,6 +87,69 @@ function show (data) {
               <h2>Comments</h2>
               {comments}
             </div>
+            <h2>Want to add your own Rave or Rant?</h2>
+            <form
+              // POST COMMENT METHOD
+              method="POST"
+              action={`/places/${data.place.id}/comment`}
+            >
+              <div className="row">
+                <div className="form-group col-sm-12">
+                  <label htmlFor="content">Your comment here</label>
+                  <textarea
+                    id="content"
+                    name="content"
+                    className="form-control text-center"
+                  ></textarea>
+                </div>
+              </div>
+              <br />
+              <div className="row">
+                <div className="form-group col-sm-5">
+                  <label htmlFor="author">Author</label>
+                  <input
+                    id="author"
+                    name="author"
+                    className="form-control text-center"
+                  />
+                </div>
+                <div className="form-group col-sm-5">
+                  <label htmlFor="stars">Star Rating</label>
+                  <input
+                    type="range"
+                    step="0.5"
+                    min="1"
+                    max="5"
+                    id="stars"
+                    name="stars"
+                    className="form-range"
+                  />
+                </div>
+                <div className="form-group col-sm-2">
+                  <label
+                    htmlFor="rant"
+                    className="form-check-label"
+                    for="rant"
+                  >
+                    Rant?
+                  </label>
+                  <br />
+                  <input
+                    className="form-check-input"
+                    type="checkbox"
+                    id="rant"
+                    name="rant"
+                    value="yes"
+                  />
+                </div>
+              </div>
+              <br />
+              <input
+                type="submit"
+                className="btn btn-primary"
+                value="Add Comment"
+              />
+            </form>
           </main>
         </Def>
     )
